@@ -1,4 +1,3 @@
-const bodyParser = require('body-parser')
 const express = require('express')
 const expressSession = require('express-session')
 const passport = require('passport')
@@ -7,7 +6,7 @@ const verifyJwt = require('express-jwt')
 const auth = require('../lib/auth.js')
 
 const router = express.Router()
-router.use(bodyParser.json())
+router.use(express.json())
 
 // The only thing we need sessions for is the Twitter strategy, because it's OAuth 1a
 const session = expressSession({
